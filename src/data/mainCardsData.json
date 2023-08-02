@@ -1,0 +1,40 @@
+{
+  "mainCardsData": [
+    {
+      "socialIcon": "uil:facebook",
+      "userName": "nathanf",
+      "followers": "1987",
+      "dailyIndicator": "▲",
+      "indicatorColor": "#1EB589",
+      "dailyFollow": "12",
+      "socialColor": "#1877F2"
+    },
+    {
+      "socialIcon": "logos:twitter",
+      "userName": "nathanf",
+      "followers": "1044",
+      "dailyIndicator": "▲",
+      "indicatorColor": "#1EB589",
+      "dailyFollow": "99",
+      "socialColor": "#55ACEE"
+    },
+    {
+      "socialIcon": "mdi:instagram",
+      "userName": "realnathanf",
+      "followers": "11k",
+      "dailyIndicator": "▲",
+      "indicatorColor": "#1EB589",
+      "dailyFollow": "1099",
+      "socialColor": "#DB4185"
+    },
+    {
+      "socialIcon": "mdi:youtube",
+      "userName": "realnathanf",
+      "followers": "8239",
+      "dailyIndicator": "▼",
+      "indicatorColor": "#BA3329",
+      "dailyFollow": "144",
+      "socialColor": "#BA3329"
+    }
+  ]
+}

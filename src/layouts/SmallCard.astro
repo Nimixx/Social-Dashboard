@@ -1,0 +1,70 @@
+---
+const { cardName } = Astro.props;
+const { socialIcon } = Astro.props;
+const { iconColor } = Astro.props;
+const { overview } = Astro.props;
+const { overviewIndicator } = Astro.props;
+const {indicatorColor} = Astro.props;
+
+import { Icon } from 'astro-icon';
+---
+
+<article class='container'>
+  <section class='wrapper'>
+    <p class='card__name'>{cardName}</p>
+    <Icon name={socialIcon} class='social__icon' style={{ color: iconColor }} />
+  </section>
+  <section class='wrapper'>
+    <h3 class='overview__data'>{overview}</h3>
+    <p class='indicator' style={{color: indicatorColor}}>{overviewIndicator}</p>
+  </section>
+</article>
+
+<style>
+  .container {
+    margin: 0 auto;
+    width: 90%;
+    height: 15rem;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    @media screen and (min-width: 768px) {
+      width: 23%;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+  }
+
+  .social__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .overview__data {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .indicator {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+</style>

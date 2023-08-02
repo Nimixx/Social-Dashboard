@@ -1,0 +1,129 @@
+<header class='container'>
+  <article class='wrapper'>
+    <h1 class='title'>Social Media Dashboard</h1>
+    <h3 class='subtitle'>Total Followers: 23,004</h3>
+  </article>
+  <section class='theme__wrapper'>
+    <p id="theme__indicator" class='theme__indicator'></p>
+    <button id='switch__btn' class='theme__switch'>
+      <div class='theme__switch--point'></div>
+    </button>
+  </section>
+</header>
+
+<style>
+  .container {
+    margin: 4rem auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    padding: 0rem 3rem;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      max-width: 144rem;
+      padding: 0rem 1.5rem;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--secondary-color);
+    transition: border-bottom 0.3s ease-in-out;
+    @media screen and (min-width: 768px) {
+      border-bottom: none;
+    }
+  }
+
+  .theme__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+    @media screen and (min-width: 768px) {
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+  }
+
+  .title {
+    font-size: 2.5rem;
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease-in-out;
+  }
+
+  .theme__indicator {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+  }
+
+  .theme__switch {
+    width: 4.5rem;
+    height: 2.2rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #378fe6, #3eda82);
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.2rem;
+  }
+
+  .theme__switch--point {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+<script>
+  const switchBtn = document.getElementById('switch__btn');
+  const themeSwitchPoint = document.querySelector('.theme__switch--point') as HTMLDivElement;
+  const themeIndicator = document.getElementById('theme__indicator');
+
+  const darkModePreference = localStorage.getItem('darkMode');
+
+  if (darkModePreference === 'true') {
+    document.body.classList.add('dark');
+    themeSwitchPoint.style.transform = 'translateX(2.15rem)';
+    themeIndicator.textContent = 'Light Mode';
+  } else {
+    themeIndicator.textContent = 'Dark Mode';
+  }
+
+  document.body.style.display = 'block';
+
+  switchBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const translateValue = document.body.classList.contains('dark') ? '2.15rem' : '0';
+    themeSwitchPoint.style.transform = `translateX(${translateValue})`;
+
+    if (document.body.classList.contains('dark')) {
+      themeIndicator.textContent = 'Light Mode';
+    } else {
+      themeIndicator.textContent = 'Dark Mode';
+    }
+
+    localStorage.setItem('darkMode', document.body.classList.contains('dark') ? 'true' : 'false');
+  });
+</script>
+

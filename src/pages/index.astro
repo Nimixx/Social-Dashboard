@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import MainCard from '../layouts/MainCard.astro';
+import SmallCard from '../layouts/SmallCard.astro';
+
+const mainCardsData = [
+  {
+    socialIcon: 'uil:facebook',
+    userName: 'nathanf',
+    fololowers: '1987',
+    dailyIndicator: '▲',
+    indicatorColor: '#1EB589',
+    dailyFolow: '12',
+    socialColor: '#1877F2',
+  },
+  {
+    socialIcon: 'logos:twitter',
+    userName: 'nathanf',
+    fololowers: '1044',
+    dailyIndicator: '▲',
+    indicatorColor: '#1EB589',
+    dailyFolow: '99',
+    socialColor: '#55ACEE',
+  },
+  {
+    socialIcon: 'mdi:instagram',
+    userName: 'realnathanf',
+    fololowers: '11k',
+    dailyIndicator: '▲',
+    indicatorColor: '#1EB589',
+    dailyFolow: '1099',
+    socialColor: '#DB4185',
+  },
+  {
+    socialIcon: 'mdi:youtube',
+    userName: 'realnathanf',
+    fololowers: '8239',
+    dailyIndicator: '▼',
+    indicatorColor: '#BA3329',
+    dailyFolow: '144',
+    socialColor: '#BA3329',
+  },
+];
+
+const smallCardsData = [
+  {
+    cardName: 'Page Views',
+    socialIcon: 'uil:facebook',
+    iconColor: '#1877F2',
+    overview: '87',
+    overviewIndicator: '▲ 3%',
+    indicatorColor: '#1EB589',
+  },
+  {
+    cardName: 'Likes',
+    socialIcon: 'uil:facebook',
+    iconColor: '#1877F2',
+    overview: '52',
+    overviewIndicator: '▼ 2%',
+    indicatorColor: '#BA3329',
+  },
+  {
+    cardName: 'Likes',
+    socialIcon: 'mdi:instagram',
+    iconColor: '#DB4185',
+    overview: '5462',
+    overviewIndicator: '▲ 2257%',
+    indicatorColor: '#1EB589',
+  },
+  {
+    cardName: 'Page Views',
+    socialIcon: 'mdi:instagram',
+    iconColor: '#DB4185',
+    overview: '52k',
+    overviewIndicator: '▲ 1375%',
+    indicatorColor: '#1EB589',
+  },
+  {
+    cardName: 'Retweets',
+    socialIcon: 'logos:twitter',
+    iconColor: '#55ACEE',
+    overview: '117',
+    overviewIndicator: '▲ 303%',
+    indicatorColor: '#1EB589',
+  },
+  {
+    cardName: 'Likes',
+    socialIcon: 'logos:twitter',
+    iconColor: '#55ACEE',
+    overview: '507',
+    overviewIndicator: '▲ 553%',
+    indicatorColor: '#1EB589',
+  },
+  {
+    cardName: 'Likes',
+    socialIcon: 'mdi:youtube',
+    iconColor: '#BA3329',
+    overview: '107',
+    overviewIndicator: '▼ 19%',
+    indicatorColor: '#BA3329',
+  },
+  {
+    cardName: 'Likes',
+    socialIcon: 'mdi:youtube',
+    iconColor: '#BA3329',
+    overview: '1407',
+    overviewIndicator: '▼ 12%',
+    indicatorColor: '#BA3329',
+  },
+];
+---
+
+<Layout title='Welcome to Astro.'>
+  <Header />
+  <main class='content'>
+    <section class='wrapper'>
+      {
+        mainCardsData.map((cardData, index) => (
+          <MainCard
+            key={index}
+            socialIcon={cardData.socialIcon}
+            userName={cardData.userName}
+            fololowers={cardData.fololowers}
+            dailyIndicator={cardData.dailyIndicator}
+            indicatorColor={cardData.indicatorColor}
+            dailyFolow={cardData.dailyFolow}
+            socialColor={cardData.socialColor}
+          />
+        ))
+      }
+    </section>
+    <h2 class='title'>Overview - Today</h2>
+    <section class='wrapper'>
+      {
+        smallCardsData.map((cardData, index) => (
+          <SmallCard
+            key={index}
+            cardName={cardData.cardName}
+            socialIcon={cardData.socialIcon}
+            iconColor={cardData.iconColor}
+            overview={cardData.overview}
+            overviewIndicator={cardData.overviewIndicator}
+            indicatorColor={cardData.indicatorColor}
+          />
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 2rem;
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+      max-width: 144rem;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+      max-width: 144rem;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0rem 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 768px) {
+      padding: 0rem 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+const { userName } = Astro.props;
+const { socialIcon } = Astro.props;
+const { fololowers } = Astro.props;
+const { dailyFolow } = Astro.props;
+const { dailyIndicator } = Astro.props;
+const { indicatorColor } = Astro.props;
+const { socialColor } = Astro.props;
+
+import { Icon } from 'astro-icon';
+---
+
+<article class='container'>
+  <div class='card__social--border' style={{ backgroundColor: socialColor }}>
+  </div>
+  <section class='social__wrapper'>
+    <Icon
+      name={socialIcon}
+      class='social__icon'
+      style={{ color: socialColor }}
+    />
+    <p class='userName'>@{userName}</p>
+  </section>
+  <section class='followers__wrapper'>
+    <h2 class='fololowers__count'>{fololowers}</h2>
+    <h3 class='fololowers__title'>Followers</h3>
+  </section>
+  <section class='indicator__wrapper'>
+    <p style={{ color: indicatorColor }}>{dailyIndicator}</p>
+    <p style={{ color: indicatorColor }}>{dailyFolow} Today</p>
+  </section>
+</article>
+
+<style>
+  .container {
+    margin: 0 auto;
+    width: 90%;
+    height: 25rem;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    z-index: 50;
+    @media screen and (min-width: 768px) {
+      width: 23%;
+    }
+  }
+
+  .card__social--border {
+    width: 100%;
+    height: 0.5rem;
+  }
+
+  .social__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .social__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 10px;
+  }
+
+  .userName {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color 0.3s ease-in-out;
+  }
+
+  .followers__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fololowers__count {
+    font-size: 5rem;
+    font-weight: 900;
+  }
+
+  .fololowers__title {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-weight: 200;
+    color: var(--text-secondary);
+    transition: color 0.3s ease-in-out;
+  }
+
+  .indicator__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+</style>
