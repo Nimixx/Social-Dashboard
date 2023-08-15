@@ -1,20 +1,19 @@
 
-# FAQ - component challenge
+# Social Dashboard
 
 [![](https://github.com/Nimixx/accordion-fm/assets/51626851/0fb56381-b24a-48d2-aa59-f48ca4e91872)](https://nimixx.github.io/accordion-fm/)
 
-This project was build with classic basic stuck and was build like a challenge on Front End Mentor.
+This project was build with classic basic Astro stuck and was build like a challenge on Front End Mentor.
 
 #### TechSutck
 
-- [React](https://react.dev/)
+- [Astro](https://astro.build/)
 - [Typescript](https://www.typescriptlang.org/)
-- [CSSModules](https://github.com/css-modules/css-modules)
-- [Vite](https://vitejs.dev/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 #### Libraries
 
-- [Lucide Icons](https://lucide.dev/icons/)
+- [Astro Icons](https://www.astroicon.dev/)
 
 ##### Links
 
