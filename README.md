@@ -1,7 +1,7 @@
 
 # Social Dashboard
 
-[![](https://github.com/Nimixx/accordion-fm/assets/51626851/0fb56381-b24a-48d2-aa59-f48ca4e91872)](https://nimixx.github.io/accordion-fm/)
+![2023-08-16 09 39 57](https://github.com/Nimixx/Social-Dashboard/assets/51626851/90fe5831-a369-4c0d-8974-d4f5799ceeff)
 
 This project was build with classic basic Astro stuck and was build like a challenge on Front End Mentor.
 
@@ -10,6 +10,7 @@ This project was build with classic basic Astro stuck and was build like a chall
 - [Astro](https://astro.build/)
 - [Typescript](https://www.typescriptlang.org/)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Json](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
 #### Libraries
 
@@ -17,7 +18,7 @@ This project was build with classic basic Astro stuck and was build like a chall
 
 ##### Links
 
-- [Live component](https://nimixx.github.io/accordion-fm/)
+- [Live component](https://nimixx.github.io/Social-Dashboard/)
 - [Front End Mentor](https://www.frontendmentor.io/profile/Nimixx)
 - [Nimixx.dev](https://www.nimixx.dev/)
 
